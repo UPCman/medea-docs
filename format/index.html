@@ -1,0 +1,122 @@
+<!doctype html><html lang="en" class="no-js"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="lang:clipboard.copy" content="Copy to clipboard"><meta name="lang:clipboard.copied" content="Copied to clipboard"><meta name="lang:search.language" content="en"><meta name="lang:search.pipeline.stopwords" content="True"><meta name="lang:search.pipeline.trimmer" content="True"><meta name="lang:search.result.none" content="No matching documents"><meta name="lang:search.result.one" content="1 matching document"><meta name="lang:search.result.other" content="# matching documents"><meta name="lang:search.tokenizer" content="[\s\-]+"><link rel="shortcut icon" href="../assets/images/favicon.png"><meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.3.0"><title>Log format - MEDEA Documentation</title><link rel="stylesheet" href="../assets/stylesheets/application.4031d38b.css"><script src="../assets/javascripts/modernizr.74668098.js"></script><link href="https://fonts.gstatic.com" rel="preconnect" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=swap"><style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style><link rel="stylesheet" href="../assets/fonts/material-icons.css"><link rel="stylesheet" href="../stylesheets/extra.css"></head><body dir="ltr"><svg class="md-svg"><defs></defs></svg> <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off"> <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off"> <label class="md-overlay" data-md-component="overlay" for="__drawer"></label><a href="#medea-log" tabindex="1" class="md-skip">Skip to content </a><header class="md-header" data-md-component="header"><nav class="md-header-nav md-grid"><div class="md-flex"><div class="md-flex__cell md-flex__cell--shrink"><a href=".." title="MEDEA Documentation" class="md-header-nav__button md-logo"><i class="md-icon"></i></a></div><div class="md-flex__cell md-flex__cell--shrink"><label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label></div><div class="md-flex__cell md-flex__cell--stretch"><div class="md-flex__ellipsis md-header-nav__title" data-md-component="title"><span class="md-header-nav__topic">MEDEA Documentation</span><span class="md-header-nav__topic">Log format</span></div></div><div class="md-flex__cell md-flex__cell--shrink"><label class="md-icon md-icon--search md-header-nav__button" for="__search"></label><div class="md-search" data-md-component="search" role="dialog"><label class="md-search__overlay" for="__search"></label><div class="md-search__inner" role="search"><form class="md-search__form" name="search"><input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active"> <label class="md-icon md-search__icon" for="__search"></label> <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">&#xE5CD;</button></form><div class="md-search__output"><div class="md-search__scrollwrap" data-md-scrollfix><div class="md-search-result" data-md-component="result"><div class="md-search-result__meta">Type to start searching</div><ol class="md-search-result__list"></ol></div></div></div></div></div></div></div></nav></header><div class="md-container"><main class="md-main"><div class="md-main__inner md-grid" data-md-component="container"><div class="md-sidebar md-sidebar--primary" data-md-component="navigation"><div class="md-sidebar__scrollwrap"><div class="md-sidebar__inner"><nav class="md-nav md-nav--primary" data-md-level="0"><label class="md-nav__title md-nav__title--site" for="__drawer"><a href=".." title="MEDEA Documentation" class="md-nav__button md-logo"><i class="md-icon"></i></a>MEDEA Documentation</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href=".." title="Home" class="md-nav__link">Home</a></li><li class="md-nav__item md-nav__item--active"><input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc"><label class="md-nav__link md-nav__link--active" for="__toc">Log format</label><a href="./" title="Log format" class="md-nav__link md-nav__link--active">Log format</a><nav class="md-nav md-nav--secondary"><label class="md-nav__title" for="__toc">Table of contents</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="#data-synchronization" title="Data synchronization" class="md-nav__link">Data synchronization</a></li><li class="md-nav__item"><a href="#header" title="Header" class="md-nav__link">Header</a></li><li class="md-nav__item"><a href="#time-pulse-event" title="Time pulse event" class="md-nav__link">Time pulse event</a></li><li class="md-nav__item"><a href="#camera-event" title="Camera event" class="md-nav__link">Camera event</a></li><li class="md-nav__item"><a href="#ublox-packet" title="Ublox packet" class="md-nav__link">Ublox packet</a></li><li class="md-nav__item"><a href="#imu-packet" title="IMU packet" class="md-nav__link">IMU packet</a></li><li class="md-nav__item"><a href="#barometer-event" title="Barometer event" class="md-nav__link">Barometer event</a></li><li class="md-nav__item"><a href="#nmea-messages" title="NMEA messages" class="md-nav__link">NMEA messages</a></li><li class="md-nav__item"><a href="#log-sample" title="Log sample" class="md-nav__link">Log sample</a></li></ul></nav></li></ul></nav></div></div></div><div class="md-sidebar md-sidebar--secondary" data-md-component="toc"><div class="md-sidebar__scrollwrap"><div class="md-sidebar__inner"><nav class="md-nav md-nav--secondary"><label class="md-nav__title" for="__toc">Table of contents</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="#data-synchronization" title="Data synchronization" class="md-nav__link">Data synchronization</a></li><li class="md-nav__item"><a href="#header" title="Header" class="md-nav__link">Header</a></li><li class="md-nav__item"><a href="#time-pulse-event" title="Time pulse event" class="md-nav__link">Time pulse event</a></li><li class="md-nav__item"><a href="#camera-event" title="Camera event" class="md-nav__link">Camera event</a></li><li class="md-nav__item"><a href="#ublox-packet" title="Ublox packet" class="md-nav__link">Ublox packet</a></li><li class="md-nav__item"><a href="#imu-packet" title="IMU packet" class="md-nav__link">IMU packet</a></li><li class="md-nav__item"><a href="#barometer-event" title="Barometer event" class="md-nav__link">Barometer event</a></li><li class="md-nav__item"><a href="#nmea-messages" title="NMEA messages" class="md-nav__link">NMEA messages</a></li><li class="md-nav__item"><a href="#log-sample" title="Log sample" class="md-nav__link">Log sample</a></li></ul></nav></div></div></div><div class="md-content"><article class="md-content__inner md-typeset"><h1 id="medea-log">MEDEA log</h1>
+<p>This section includes a description of the MEDEA log format, that is being stored in the SD card. </p>
+<p>If you do not want to build your own parser, you can obtain the Rinex as well as CSV files with the 
+IMU and the CAM events (as GPS week and second) using <a href="https://jason.rokubun.cat/">Jason</a>. Just register
+to the service, the conversion tool is free for MEDEA owners.</p>
+<p>If you just need to get the GNSS data in RINEX format, you could use the <code>convbin</code> tool from <a href="http://www.rtklib.com">RTKlib</a> 
+or UNAVCO's <a href="https://www.unavco.org/software/data-processing/teqc/teqc.html#executables"><code>teqc</code></a>. However, bear
+in mind that these tools have limited support for the dual-frequency data of the ublox ZED-F9P chipset and no IMU data will be processed.</p>
+<p>In case you need to develop your own parser, have a look at the sections below. The format is a binary
+file with headers in ASCII so that is easy to overview and eventually, friendly for Linux based text processing
+command line tools such as <code>grep</code> or <code>awk</code>.</p>
+<h2 id="data-synchronization">Data synchronization</h2>
+<p>The microcontroller within MEDEA timestamps all messages as shown in the formats below. This feature can be used to
+link the epoch of each event or packet to the GPS time scale.</p>
+<h2 id="header">Header</h2>
+<p>The first line details the firmware version. </p>
+<pre><code>MEDEA FW: g8750868, Sep 29 2017 14:16:07
+              |                     |_ Compilation date
+              |
+              |_______________________ GiT SHA (first 8 characters)                            (Not present on tagged versions)
+</code></pre>
+<h2 id="time-pulse-event">Time pulse event</h2>
+<p>The timepulse event carries the PPS generated by the chipset, albeit this is not strictly needed for synchronization.</p>
+<pre><code>$PROKTPS,MT,TC\r\n
+          |  |__________________ Counter of time-pulse event
+          |
+          |_____________________ Microcontroller Timestamp [μs] at time-pulse interrupt 
+                                 (triggered by the Pulse-per-second (PPS) signal of the receiver)
+</code></pre>
+<h2 id="camera-event">Camera event</h2>
+<p>This event is generated in the log whenever the trigger input of the receiver is in high mode. This 
+event can be triggered via a hotshoe connected to the receiver.</p>
+<pre><code>$PROKCAM,MT,CC\r\n
+          |  |__________________ Counter of camera event 
+          |
+          |_____________________ Microcontroller timestamp [μs] at camera interrupt
+                                 (triggered by camera shutter signal captured on the hotshoe)
+</code></pre>
+<h2 id="ublox-packet">Ublox packet</h2>
+<p>All Ublox packets (regardless the type) are also timestamped by the microcontroller. Note that if
+the ublox message is of <code>RXM-RAWX</code> type (that conveys the GPS time), the microcontroller timestamp
+can be effectively linked to the GPS time scale. This will then create the necessary offset to refer
+the upcoming packets (<code>PROKIMU</code>, <code>PROKCAM</code>, ...)</p>
+<pre><code>$PROKBIN,MT,UC,&lt;UBX binary&gt;\r\n
+          |  |           |______ u-blox binary message(RAWX, SFRBX...)
+          |  |
+          |  |__________________ Counter of Ublox messages
+          |
+          |_____________________ Microcontroller timestamp [μs] at message arrival
+</code></pre>
+<h2 id="imu-packet">IMU packet</h2>
+<p>This packet contains the packets generated by the Inertial Measurement Unit</p>
+<pre><code>$PROKIMU,MT,IC,&lt;IMU binary&gt;\r\n
+          |  |           |______ IMU binary message, containing the 9 floats (ax,ay,az,gx,gy,gz,mx,my,mz)
+          |  |
+          |  |__________________ Counter of IMU messages
+          |
+          |_____________________ Microcontroller timestamp [μs] at reception of IMU sample
+</code></pre>
+<p>The IMU binary is composed by the following 9 floats (in the same order):</p>
+<ol>
+<li>Accelerometer X value <code>[m/s^2]</code></li>
+<li>Accelerometer Y value <code>[m/s^2]</code></li>
+<li>Accelerometer Z value <code>[m/s^2]</code></li>
+<li>Gyroscope X value <code>[rad/s]</code></li>
+<li>Gyroscope Y value <code>[rad/s]</code></li>
+<li>Gyroscope Z value <code>[rad/s]</code></li>
+<li>Magnetometer X value <code>[nT]</code></li>
+<li>Magnetometer Y value <code>[nT]</code></li>
+<li>Magnetometer Z value <code>[nT]</code></li>
+</ol>
+<h2 id="barometer-event">Barometer event</h2>
+<p>This section describes the line for the Barometer, that can be used to constraint the <code>z</code> component of the
+navigation filter and reduce the error in this direction, usually the worst in GNSS-based
+position estimates.</p>
+<pre><code>$PROKBAR,MT,TC,&lt;BAR binary&gt;\r\n
+          |  |           |______ BAR binary message
+          |  |
+          |  |__________________ Counter of barometer events
+          |
+          |_____________________ Microcontroller Timestamp [μs] at time-pulse interrupt 
+                                (triggered by the Pulse-per-second (PPS) signal of the receiver)
+</code></pre>
+<p>The BAR binary is composed by the following 3 floats (in the same order):</p>
+<ol>
+<li>Altitude <code>[m]</code></li>
+<li>Pressure <code>[hPa]</code></li>
+<li>Temperature <code>[degrees Celsius]</code></li>
+</ol>
+<h2 id="nmea-messages">NMEA messages</h2>
+<p>NMEA messages are also logged without further encapsulation. </p>
+<h2 id="log-sample">Log sample</h2>
+<p>A sample format for the MEDEA logging file follows:</p>
+<pre><code>MEDEA-F9P FW: 5082ba8, Mar 28 2019 20:22:21
+$PROKBAR,5346447,7,¦£›Âp¨?D�'òA
+$PROKIMU,5322247,107,œ �A �ÿ=²ð1A™L�Ã�Ñ+BÂPCÃ¬ôÛAÞTiERéhÅ
+$PROKIMU,5322247,108,— �Á˜ð�@¿ &gt;Á©ì©¿Æ8GÃ£�¤¿«†D�?XÅ‘´„E
+$PROKTPS,5366769,1
+$PROKBIN,5380187,6,
+µb���       �@  � ��Æ�bÇ
+$PROKIMU,5362391,109,® ®½Ì LÁ¨ §½ "!ÀºR|Aµ¤5¿´æŽÅ?í3Â
+�^A
+$PROKIMU,5382462,110,¨ '¾‚`?Ý \½÷�ù?”j•?4�Ãh6ÂCûå¬Â:)ùA
+$GNGGA,125627.50,4124.13523,N,00211.71103,E,1,12,0.90,16.9,M,49.3,M,,*7B
+$PROKIMU,5422605,111, �ÿ=ž ž=¡  Á�q;B�õ%Ã˜X�C´æŽAÚ�ÞAX�^E
+$PROKIMU,5482831,112,¸ð7@¯ð-Á¤ $AË�MÃ¾h?C©ì©?ÒJ‚ÅÝÄJDœ¹EÅ
+$PROKIMU,5482831,113,Ì LÁ´ 4Aª ª=úq|Až.Ÿ?¤$@¾²ŠESh–ÅUT-Â
+$PROKIMU,5502904,114,P?¨ §=¤€#&gt;“v“?¶˜7?÷�ù¿{øpA°ÜÂC�‹¥Â
+$PROKIMU,5543050,115,— –=Ì L= �ÿ½��$Ã¡�"C�¡3Â�“öAž˜“A‚iÈA
+$PROKIMU,5563121,116,²ð1Á§ &amp;A˜ð�Àµ¤5C4�ÃÛ´\C�[kE7fwÅÏ*ND
+$PROKIMU,5583194,117,Å DA¨ (ÁÝ \A "¡?¬Ú¬¿z°|Áî`]Å?)‹EÐ™“Å
+$PROKIMU,5623338,118,¤ ¤=¯ ¯½@¿µ¤5?¡™"ÀŽ¿µS3ÂÚ�^Aë`»C
+$PROKIMU,5643411,119,Æ F=§€&amp;¾– •½Ÿ( C÷�ù?
+Å-C�¬¬ÂVÕÿAésvA
+$PROKCAM,5683501,1
+$PROKIMU,5683558,120,¨ (A �ÿ=¶ð5A˜X�Ã�¡3BÎ�OÃ�&amp;ÒA¿å`EF  qÅ
+$PROKIMU,5743781,121,’ �Á¸ð7@¹ 8Á©ì©¿ÄDEÃŸ( ¿ÃìvD�?XÅ@ÿE
+$PROKIMU,5743781,122,° °½Ô TÁ¥ ¥½¡�"À¼Ï|A¼t=¿¡N—Å?í3Âj©XA
+$PROKIMU,5763852,123,§ &amp;¾P?º :½÷�ù?˜X˜?™L�Ã¾ÜÁCûå¬ÂïcòA
+$PROKIMU,5803995,124, �ÿ=˜ ˜=ž �Á��$B
+Å-Ã›@�Cy±ƒAàAÔAX�^E
+</code></pre></article></div></div></main><footer class="md-footer"><div class="md-footer-nav"><nav class="md-footer-nav__inner md-grid"><a href=".." title="Home" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev"><div class="md-flex__cell md-flex__cell--shrink"><i class="md-icon md-icon--arrow-back md-footer-nav__button"></i></div><div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span class="md-flex__ellipsis"><span class="md-footer-nav__direction">Previous</span>Home</span></div></a></nav></div><div class="md-footer-meta md-typeset"><div class="md-footer-meta__inner md-grid"><div class="md-footer-copyright">powered by <a href="https://www.mkdocs.org">MkDocs</a> and <a href="https://squidfunk.github.io/mkdocs-material/">Material for MkDocs</a></div></div></div></footer></div><script src="../assets/javascripts/application.b260a35d.js"></script><script>app.initialize({version:"1.0.4",url:{base:".."}})</script></body></html>
